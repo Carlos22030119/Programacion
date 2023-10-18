@@ -26,14 +26,26 @@ while True:
         for linea in archivo:
             peatones.append(linea.strip())
             
-            if(horaInicial<=datetime.strptime(peatonesH[i], '%H:%M:%S').date()):
-               completado.apend(peatones.pop) 
-            i=i+1
-
+         
+            i=i+1#sirve para evaluar la cadenaH
+        archivo.close
 
     horaInicial=horaInicial+datetime.timedelta(minutes=2)
     time.sleep(5)#cambiar a 120 en el programa final
-  
-    print(horaInicial)
-    for linea in completado:
-        print(linea)
+
+    with open("C:\\Users\\sergi\\OneDrive\\Documentos\\GitHub\\Programacion\\PhytonProjects\\GeneracionSemaforo\\archivoCiclista.dat","r") as archivo:
+        i=0
+        for linea in archivo:
+            ciclistas.append(linea.strip())
+        
+            i=i+1#sirve para evaluar la cadenaH
+        archivo.close 
+    
+    with open("C:\\Users\\sergi\\OneDrive\\Documentos\\GitHub\\Programacion\\PhytonProjects\\GeneracionSemaforo\\archivoAuto.dat","r") as archivo:
+        i=0
+        for linea in archivo:
+            autos.append(linea.strip())
+        
+            i=i+1#sirve para evaluar la cadenaH
+        archivo.close 
+   
